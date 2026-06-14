@@ -65,6 +65,9 @@ q2graph_colors = ['Pink', 'Purple']
 
 plt.bar(["Low Elixir (0-4)", "High Elixir (5-9)"], [low_elixir_win_rate, high_elixir_win_rate], color=q2graph_colors)
 
+for i, value in enumerate([low_elixir_win_rate, high_elixir_win_rate]):
+    plt.text(i, value + 0.05, f"{value:.2f}%", ha='center', color='white', fontweight='bold')
+
 plt.title("Win Rate by High and Low Elixir Cost Cards")
 plt.xlabel("Elixir Cost")
 plt.ylabel("Win Rate")
@@ -94,7 +97,7 @@ plt.bar(predictors.index, predictors.values, color=q3graph_colors)
 
 plt.title("What is the Best Predictor of Win Rate?")
 plt.xlabel("Predictors")
-plt.ylabel("Win Rate")
+plt.ylabel("Correlation")
 plt.ylim(-0.1, 0.3)
 plt.axhline(y=0, color='white', linewidth=1)
 plt.show()
