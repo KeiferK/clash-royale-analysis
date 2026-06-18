@@ -1,8 +1,6 @@
 # Clash Royale Analysis of 2025 Data Set (https://www.kaggle.com/datasets/hrish4/clash-royale-cards-data)
 # By: Keifer Kolar
 
-
-# Charts and Visualizations COMING SOON! -> import matplotlib.pyplot as plt
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -61,7 +59,7 @@ print("Low Elixir (1-4 Elixir): ", low_elixir_win_rate)
 print("High Elixir (5-9 Elixir): ", high_elixir_win_rate)
 
 # Q2 Graph
-q2graph_colors = ['Pink', 'Purple']
+q2graph_colors = ['pink', 'purple']
 
 plt.bar(["Low Elixir (0-4)", "High Elixir (5-9)"], [low_elixir_win_rate, high_elixir_win_rate], color=q2graph_colors)
 
