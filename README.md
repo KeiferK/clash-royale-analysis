@@ -9,7 +9,7 @@ Nevertheless, I wanted to find out and there is only one way to satiate this thi
 
 ---
 
-For this project, I will be using **Python**, **Pandas** for Data Manipulation / Analytics, and **Matplotlib** for Data Visualization (*Coming Soon!*) 
+For this project, I will be using **Python**, **Pandas** for Data Manipulation / Analytics, and **Matplotlib** for Data Visualization. 
 This data is publicly available on [Kaggle](https://www.kaggle.com/datasets/hrish4/clash-royale-cards-data)
 
 ---
