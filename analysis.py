@@ -41,6 +41,9 @@ q1graph_colors = ['gold', 'cyan', 'purple', 'orange', 'blue']
 
 plt.bar(rarity_winrate.index, rarity_winrate.values, color=q1graph_colors)
 
+for i, (rarity, value) in enumerate(zip(rarity_winrate.index, rarity_winrate.values)):
+    plt.text(i, value + 0.05, f"{value:.2f}%", ha='center', color='white', fontweight='bold')
+
 plt.title("Win Rate by Rarity")
 plt.xlabel("Rarity")
 plt.ylabel("Win Rate")
@@ -93,9 +96,46 @@ q3graph_colors = ['red', 'blue', 'green']
 
 plt.bar(predictors.index, predictors.values, color=q3graph_colors)
 
+for i, (predictor, value) in enumerate(zip(predictors.index, predictors.values)):
+    plt.text(i, value + 0.005, f"{value:.3f}", ha='center', color='white', fontweight='bold')
+
 plt.title("What is the Best Predictor of Win Rate?")
 plt.xlabel("Predictors")
 plt.ylabel("Correlation")
 plt.ylim(-0.1, 0.3)
 plt.axhline(y=0, color='white', linewidth=1)
+plt.show()
+
+# Question 4: Do aerial cards have higher win rates on average compared to grounded cards?
+
+aerial_cards = ["Minions", "Baby Dragon", "Balloon", "Lava Hound", 
+                "Inferno Dragon", "Bats", "Skeleton Barrel", 
+                "Flying Machine", "Electro Dragon", "Minion Horde"]
+
+aerial = df[df["Card"].isin(aerial_cards)]
+grounded = df[~df["Card"].isin(aerial_cards)]
+
+aerial_avg = aerial["Win Rate"].mean()
+grounded_avg = grounded["Win Rate"].mean()
+
+print("\nQuestion 4: Do Aerial cards have higher win rates on average compared to Grounded cards?\n")
+print("Aerial units avg win rate:", aerial_avg)
+print("Grounded units avg win rate:", grounded_avg)
+
+# REVISIT LATER
+# Note: aerial units skew toward higher rarities which may explain
+# the win rate difference rather than the aerial attribute itself
+
+# Q4 Graph
+q4graph_colors = ['skyblue', 'saddlebrown']
+
+plt.bar(["Aerial", "Grounded"], [aerial_avg, grounded_avg], color=q4graph_colors)
+
+for i, value in enumerate([aerial_avg, grounded_avg]):
+    plt.text(i, value + 0.05, f"{value:.2f}%", ha='center', color='white', fontweight='bold')
+
+plt.title("Win Rate by Aerial and Grounded Cards")
+plt.xlabel("Card Type")
+plt.ylabel("Win Rate")
+plt.ylim(50, 56)
 plt.show()
