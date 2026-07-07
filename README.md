@@ -26,5 +26,6 @@ This data is publicly available on [Kaggle](https://www.kaggle.com/datasets/hris
 - Cards with higher rarity also have slightly higher win rates
 - Low Elixir Cards (1-4 Elixir) have a higher win rate than High Elixir Cards (5-9 Elixir)
 - Rarity has the highest correlation in determining the best predictor of win rate
+- Aerial cards average approximately 1% higher win rate than grounded cards, though this may be partially explained by aerial cards skewing toward higher rarities rather than the aerial attribute itself.
 
 Developed by _Keifer Kolar_
